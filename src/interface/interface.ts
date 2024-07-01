@@ -11,3 +11,12 @@ export interface Ibook extends Document{
         category:string;
         user:mongoose.Schema.Types.ObjectId;
     }
+export interface Inote extends Document{
+        user:mongoose.Schema.Types.ObjectId;
+        name:string;
+        contents:Icontents[];
+}
+
+export interface Icontents extends Document{
+        content: string
+}

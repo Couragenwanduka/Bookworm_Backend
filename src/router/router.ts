@@ -4,6 +4,9 @@ import { getCategory } from '../controller/controller';
 import { saveCategory } from '../controller/controller';
 import { saveBook } from '../controller/bookController';
 import { getBooks } from '../controller/bookController';
+import { findByUser } from '../controller/noteController';
+import { addContents } from '../controller/noteController';
+import { createNote } from '../controller/noteController';
 import { createUser } from '../controller/userController';
 import { getText } from '../controller/bookController';
 import { getSavedBook } from '../controller/bookController';
@@ -27,5 +30,10 @@ router.post('/get-text', getText);
 // category routers
 router.get('/categories', getCategory);
 router.post('/categories', saveCategory);
+
+// note routers
+router.post('create-note', createNote);
+router.post('add-contents', addContents);
+router.get('get-notes:id',findByUser);
 
 export default router;

@@ -39,3 +39,14 @@ export const updateBookSchema = yup.object().shape({
     id: yup.array().required("book id's are required"),
     newCategory: yup.string().required('category is required'),
 });
+
+export const noteSchema = yup.object().shape({
+    id: yup.string().required("note id's are required"),
+    name: yup.string().required("note name's are required"),
+})
+
+export const contentSchema = yup.object().shape({
+    id: yup.string().required("note id's are required"),
+    name: yup.string().required("note name's are required"),
+    content: yup.string().required("content is required"),
+})
