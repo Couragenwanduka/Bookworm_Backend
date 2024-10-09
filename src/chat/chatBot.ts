@@ -4,7 +4,7 @@ import { googleApi } from "../helper/geninApi";
 export const setUpServer = (server:any) => {
     const io =  new Server(server,{
         cors: {
-          origin: 'http://localhost:5173',
+          origin: '*',
           methods: ['GET', 'POST'],
           allowedHeaders: ['Content-Type', 'Authorization'],
           credentials: true,
@@ -16,7 +16,7 @@ export const setUpServer = (server:any) => {
         socket.on('chat message', async(message:string) => {
             if(message){
                 const data = await googleApi(message);
-                console.log(data, 'data')
+                // console.log(data, 'data')
                 socket.emit('chat message', data);
             }else{
                 socket.emit('chat message', 'No message sent');
